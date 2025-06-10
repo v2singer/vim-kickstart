@@ -9,6 +9,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
+"" color def
+highlight Pmenu ctermbg=237 guibg=#444444
+
 
 "" vim config
 
