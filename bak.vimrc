@@ -11,11 +11,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "" -------- color def -----------------------------
-highlight Pmenu ctermbg=237 guibg=#444444
+highlight Pmenu ctermbg=27 guibg=#444444
 
 "" ctags
 let g:gutentags_project_root = ['.git', 'svn', '.root' ]
-let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
+let g:gutentags_ctags_executable = '/opt/homebrew/opt/universal-ctags/bin/ctags'
 let g:gutentags_ctags_extra_args = ['--languages=+GDScript', '--map-GDScript=+.gd']
 let g:gutentags_cache_dir = '~/.cache/ctags'
 "let g:gutentags_trace = 1
@@ -77,7 +77,7 @@ vnoremap <leader>e <Esc>:Vex<CR>
 
 "" --------------------- godot vim -----------------
 "
-let g:godot_executable = '/mnt/d/Godot/Godot_v4.4-stable_win64.exe'
+let g:godot_executable = '/Applications/Godot_v4.4.app/Contents/MacOS/Godot'
 
 func! GodotSettings() abort
     setlocal foldmethod=expr

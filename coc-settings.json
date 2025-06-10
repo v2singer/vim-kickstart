@@ -1,9 +1,4 @@
 {
     "languageserver": {
-        "godot": {
-            "host": "192.168.100.174",
-            "filetypes": ["gdscript"],
-            "port": 6005
-        }
     }
 }
