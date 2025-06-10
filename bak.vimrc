@@ -5,12 +5,20 @@ Plug 'tpope/vim-sensible'
 Plug 'habamax/vim-godot'
 Plug 'habamax/vim-gdscript'
 "Plug 'tpope/vim-dispatch'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 "" color def
 highlight Pmenu ctermbg=237 guibg=#444444
+
+"" ctags
+let g:gutentags_project_root = ['.git', 'svn', '.root' ]
+let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
+let g:gutentags_ctags_extra_args = ['--languages=+GDScript', '--map-GDScript=+.gd']
+let g:gutentags_cache_dir = '~/.cache/ctags'
+let g:gutentags_trace = 1
 
 
 "" vim config
@@ -25,6 +33,9 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+
+" auto retab
+autocmd FileType gdscript,python,rust autocmd! BufWritePre * set expandtab | %retab
 
 " Linebreak on 500 charactersAdd commentMore actions
 set lbr
