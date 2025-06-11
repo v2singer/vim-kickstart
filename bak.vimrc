@@ -60,7 +60,7 @@ let g:netrw_altv = 0
 "设置文件浏览器窗口宽度为 25%
 let g:netrw_winsize = 25
 
-let mapleader = "\<C-b>"
+let mapleader = "\<C-e>"
 nnoremap <leader>e :Vex<CR>
 inoremap <leader>e <Esc>:Vex<CR>
 vnoremap <leader>e <Esc>:Vex<CR>
