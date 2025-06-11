@@ -10,7 +10,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-"" color def
+"" -------- color def -----------------------------
 highlight Pmenu ctermbg=237 guibg=#444444
 
 "" ctags
@@ -18,10 +18,11 @@ let g:gutentags_project_root = ['.git', 'svn', '.root' ]
 let g:gutentags_ctags_executable = '/usr/local/bin/ctags'
 let g:gutentags_ctags_extra_args = ['--languages=+GDScript', '--map-GDScript=+.gd']
 let g:gutentags_cache_dir = '~/.cache/ctags'
-let g:gutentags_trace = 1
+"let g:gutentags_trace = 1
+"" ------------------------------------------------
 
 
-"" vim config
+"" ---------------- vim config ------------------
 
 set list
 set listchars=tab:>-,trail:-
@@ -41,7 +42,9 @@ autocmd FileType gdscript,python,rust autocmd! BufWritePre * set expandtab | %re
 set lbr
 set tw=500
 
-"" newRw in vim
+"" -----------------------------------------------
+
+"" ---------------- newRw in vim -----------------
 "设置是否显示横幅
 let g:netrw_banner = 0
 
@@ -62,6 +65,8 @@ nnoremap <leader>e :Vex<CR>
 inoremap <leader>e <Esc>:Vex<CR>
 vnoremap <leader>e <Esc>:Vex<CR>
 
+"" ------------------------------------------------
+
 
 "自动打开文件浏览器 netrw
 "augroup ProjectDrawer
@@ -70,7 +75,7 @@ vnoremap <leader>e <Esc>:Vex<CR>
 "augroup END
 "
 
-" godot vim
+"" --------------------- godot vim -----------------
 "
 let g:godot_executable = '/mnt/d/Godot/Godot_v4.4-stable_win64.exe'
 
@@ -86,8 +91,9 @@ augroup godot | au!
     au FileType gdscript call GodotSettings()
 augroup end
 
+"" ------------------------------------------------
 
-"" coc default config
+"" ----------------- coc default config --------------
 
 " utf-8 byte sequence
 set encoding=utf-8
@@ -246,3 +252,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+"" --------------------------------------------
