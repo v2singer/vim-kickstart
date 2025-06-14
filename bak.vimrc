@@ -44,7 +44,7 @@ set tw=500
 
 "" -----------------------------------------------
 
-"" ---------------- newRw in vim -----------------
+"" ---------------- netrw in vim -----------------
 "设置是否显示横幅
 let g:netrw_banner = 0
 
@@ -59,6 +59,9 @@ let g:netrw_altv = 0
 
 "设置文件浏览器窗口宽度为 25%
 let g:netrw_winsize = 25
+
+"忽略mac下._开头的文件
+let g:netrw_list_hide= '^\._'
 
 let mapleader = "\<C-e>"
 nnoremap <leader>e :Vex<CR>
