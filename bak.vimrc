@@ -27,6 +27,7 @@ let g:gutentags_cache_dir = '~/.cache/ctags'
 set list
 set listchars=tab:>-,trail:-
 set expandtab
+set number
 
 " Be smart when using tabs ;)
 set smarttab
