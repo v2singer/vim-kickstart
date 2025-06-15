@@ -26,7 +26,7 @@ let g:gutentags_cache_dir = '~/.cache/ctags'
 
 set list
 set listchars=tab:>-,trail:-
-set expandtab
+"set expandtab
 set number
 
 " Be smart when using tabs ;)
@@ -36,12 +36,25 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" auto retab
-autocmd FileType gdscript,python,rust autocmd! BufWritePre * set expandtab | %retab
+" auto retab with python\rust "not gdscript
+autocmd FileType python,rust autocmd! BufWritePre * set expandtab | %retab
 
 " Linebreak on 500 charactersAdd commentMore actions
 set lbr
 set tw=500
+
+" 启用自动重新加载
+"set autoread
+
+" 自动检测文件变更并提示重新加载
+"augroup AutoReload
+"  autocmd!
+"  autocmd CursorHold,CursorHoldI * if getfsize(expand('%')) != line2byte(line('$')+1) | echo "File changed, reloading..." | edit! | endif
+"augroup END
+
+" 定义 Reload 命令
+command! Reload edit!
+
 
 "" -----------------------------------------------
 
@@ -84,7 +97,7 @@ vnoremap <leader>e <Esc>:Vex<CR>
 let g:godot_executable = '/Applications/Godot_v4.4.app/Contents/MacOS/Godot'
 
 func! GodotSettings() abort
-    setlocal foldmethod=expr
+    "setlocal foldmethod=expr
     setlocal tabstop=4
     nnoremap <buffer> <F4> :GodotRunLast<CR>
     nnoremap <buffer> <F5> :GodotRun<CR>
