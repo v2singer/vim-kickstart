@@ -19,6 +19,18 @@ let g:gutentags_ctags_executable = '/opt/homebrew/opt/universal-ctags/bin/ctags'
 let g:gutentags_ctags_extra_args = ['--languages=+GDScript', '--map-GDScript=+.gd']
 let g:gutentags_cache_dir = '~/.cache/ctags'
 "let g:gutentags_trace = 1
+
+"" 重新定义Ctrl+] 用于修复Ctrl+] 偶尔会错误的问题
+"" 定义一个函数，用于执行 :tselect 并传递当前光标下的单词
+function! TSelectUnderCursor()
+  " 获取当前光标下的单词
+  let word = expand("<cword>")
+  " 执行 :tselect 命令
+  execute "tselect " . word
+endfunction
+
+" 将 Ctrl+] 映射到这个函数
+nnoremap <C-]> :call TSelectUnderCursor()<CR>
 "" ------------------------------------------------
 
 
