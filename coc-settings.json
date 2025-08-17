@@ -1,9 +1,9 @@
 {
     "languageserver": {
-        "coc-godot4": {
+        "godot4": {
             "enable": true,
             "host": "127.0.0.1",
-            "filetypes": ["gdscript", "gdshader"],
+            "filetypes": ["gdscript", "gd", "gdsheder"],
             "rootPatterns": ["project.godot"],
             "port": 6005
         }

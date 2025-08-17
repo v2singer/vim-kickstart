@@ -7,6 +7,8 @@ Plug 'habamax/vim-gdscript'
 "Plug 'tpope/vim-dispatch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -94,7 +96,15 @@ nnoremap <leader>e :Vex<CR>
 inoremap <leader>e <Esc>:Vex<CR>
 vnoremap <leader>e <Esc>:Vex<CR>
 
-"" ------------------------------------------------
+"" fzf 搜索文件
+" 让 :Files 默认用 tab 打开
+function! s:open_in_tab(lines)
+  execute 'tabedit' a:lines
+  "execute 'tabedit' a:lines[0]
+endfunction
+
+command! FilesTab call fzf#vim#files('.', {'sink': function('s:open_in_tab')})
+nnoremap <leader>zf :FilesTab<CR>
 
 
 "自动打开文件浏览器 netrw
@@ -103,6 +113,8 @@ vnoremap <leader>e <Esc>:Vex<CR>
 "  autocmd VimEnter * :Vexplore
 "augroup END
 "
+
+"" ------------------------------------------------
 
 "" --------------------- godot vim -----------------
 "
